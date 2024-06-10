@@ -24,6 +24,20 @@ const UserSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    location: {
+      latitude: {
+        type: Number,
+        require: true,
+      },
+      longitude: {
+        type: Number,
+        require: true,
+      },
+      address: {
+        type: String,
+        required: false,
+      },
+    },
   },
   {
     timestamps: true,
@@ -31,7 +45,7 @@ const UserSchema = mongoose.Schema(
 );
 
 
-const user=mongoose.model("user", UserSchema);
 
+const user = mongoose.model("user", UserSchema);
 
-module.exports=user;
+module.exports = user;
